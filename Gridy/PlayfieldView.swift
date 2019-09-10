@@ -14,8 +14,8 @@ import AVFoundation
 class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     
     //IBOutlets
-    @IBOutlet weak var CVOne: UICollectionView!
-    @IBOutlet weak var CVTwo: UICollectionView!
+    @IBOutlet weak var GridPickerCollectionView: UICollectionView!
+    @IBOutlet weak var GridBoardCollectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var popUpView: UIImageView!
     @IBOutlet weak var newGameButton: UIButton!
@@ -45,7 +45,7 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
         
         CVOneImages = toReceive
         CVOneImages.shuffle()
-        CVOne.reloadData()
+        GridPickerCollectionView.reloadData()
         popUpView.image = popUpImage
         popUpView.isHidden = true
         scoring(moves: moves)
@@ -54,8 +54,8 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
                 CVOneImages.append(image)
             }
         }
-        CVOne.dragInteractionEnabled = true
-        CVTwo.dragInteractionEnabled = true
+        GridPickerCollectionView.dragInteractionEnabled = true
+        GridBoardCollectionView.dragInteractionEnabled = true
         if CVTwoImages.count == 0 {
             if let blank = UIImage(named: "Blank") {
                 var temp = [UIImage]()
@@ -63,7 +63,7 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
                     temp.append(blank)
                 }
                 CVTwoImages = temp
-                CVTwo.reloadData()
+                GridPickerCollectionView.reloadData()
             }
         }
     }
