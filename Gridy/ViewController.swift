@@ -39,8 +39,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     //Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mySegue" {
-            let vc = segue.destination as! ImageEditorView
-            vc.incomingImage = UIImage.image
+            _ = segue.destination as! ImageEditorView
         }
     }
     

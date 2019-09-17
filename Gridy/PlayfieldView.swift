@@ -37,7 +37,6 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     var popUpImage = UIImage()
     var isSelected: IndexPath?
     var soundIsOn: Bool = true
-    var audioPlayer: AVAudioPlayer?
     
     //View Functions
     override func viewDidLoad() {
@@ -77,21 +76,6 @@ class PlayfieldView: UIViewController, AVAudioPlayerDelegate {
     
     func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-    }
-    
-    func playSound() {
-        if soundIsOn == true {
-            audioPlayer = AVAudioPlayer()
-            let soundURL = Bundle.main.url(forResource: "oookay", withExtension: "wav")
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
-                print("sound is playing!!")
-            }
-            catch {
-                print (error.localizedDescription)
-            }
-            audioPlayer!.play()
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
