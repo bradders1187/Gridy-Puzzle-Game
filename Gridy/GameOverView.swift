@@ -10,7 +10,7 @@ import UIKit
 
 class GameOverView: UIViewController {
     
-    //MARK: Outlets
+    //Outlets
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var optionsButton: UIButton!
@@ -20,7 +20,7 @@ class GameOverView: UIViewController {
     @IBOutlet weak var wrongMoves: UILabel!
     @IBOutlet weak var correctMoves: UILabel!
     
-    //MARK: Variables
+    //Variables
     var popUpImage = UIImage()
     var rightMoves = Int()
     var moves = Int()
