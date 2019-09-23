@@ -13,13 +13,16 @@
 		DDF10C6723080FCD00E8C67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF10C6523080FCD00E8C67A /* LaunchScreen.storyboard */; };
 		DDF10C7223080FCD00E8C67A /* GridyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C7123080FCD00E8C67A /* GridyTests.swift */; };
 		DDF10C7D23080FCD00E8C67A /* GridyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C7C23080FCD00E8C67A /* GridyUITests.swift */; };
-		DDF10C942318730100E8C67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF10C922318730100E8C67A /* Main.storyboard */; };
 		DDF10C96231876B300E8C67A /* ImageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C95231876B300E8C67A /* ImageEditorView.swift */; };
 		DDF10C98231876F100E8C67A /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C97231876F100E8C67A /* GameOverView.swift */; };
 		DDF10C9A2318771F00E8C67A /* PlayfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C992318771F00E8C67A /* PlayfieldView.swift */; };
 		DDF10C9C2330CCF200E8C67A /* GameOverShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C9B2330CCF200E8C67A /* GameOverShare.swift */; };
 		DDF10C9E2330CD8900E8C67A /* PlayfieldScoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C9D2330CD8900E8C67A /* PlayfieldScoring.swift */; };
 		DDF10CA12330CEAD00E8C67A /* Creations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10CA02330CEAD00E8C67A /* Creations.swift */; };
+		DDF10CA62339471F00E8C67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF10CA52339471F00E8C67A /* Main.storyboard */; };
+		DDF10CA82339476100E8C67A /* Playfield+DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10CA72339476100E8C67A /* Playfield+DragDrop.swift */; };
+		DDF10CAA2339477200E8C67A /* Playfield+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10CA92339477200E8C67A /* Playfield+Delegates.swift */; };
+		DDF10CAC233949E600E8C67A /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10CAB233949E600E8C67A /* myCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +55,16 @@
 		DDF10C7823080FCD00E8C67A /* GridyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF10C7C23080FCD00E8C67A /* GridyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridyUITests.swift; sourceTree = "<group>"; };
 		DDF10C7E23080FCD00E8C67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDF10C932318730100E8C67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Downloads/Gridy-master/Gridy/Gridy/View/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		DDF10C95231876B300E8C67A /* ImageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorView.swift; sourceTree = "<group>"; };
 		DDF10C97231876F100E8C67A /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		DDF10C992318771F00E8C67A /* PlayfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldView.swift; sourceTree = "<group>"; };
 		DDF10C9B2330CCF200E8C67A /* GameOverShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverShare.swift; sourceTree = "<group>"; };
 		DDF10C9D2330CD8900E8C67A /* PlayfieldScoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfieldScoring.swift; sourceTree = "<group>"; };
 		DDF10CA02330CEAD00E8C67A /* Creations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creations.swift; sourceTree = "<group>"; };
+		DDF10CA52339471F00E8C67A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../Downloads/Griddy-Puzzle-Game-master/Gridy/Gridy/Main.storyboard"; sourceTree = "<group>"; };
+		DDF10CA72339476100E8C67A /* Playfield+DragDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Playfield+DragDrop.swift"; path = "../../../../Downloads/Gridy-master/Gridy/Gridy/Controller/Playfield+DragDrop.swift"; sourceTree = "<group>"; };
+		DDF10CA92339477200E8C67A /* Playfield+Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Playfield+Delegates.swift"; path = "../../../../Downloads/Gridy-master/Gridy/Gridy/Controller/Playfield+Delegates.swift"; sourceTree = "<group>"; };
+		DDF10CAB233949E600E8C67A /* myCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = myCell.swift; path = "../../../../Downloads/Gridy-master/Gridy/Gridy/Controller/myCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,17 +115,21 @@
 		DDF10C5B23080FCC00E8C67A /* Gridy */ = {
 			isa = PBXGroup;
 			children = (
+				DDF10CAB233949E600E8C67A /* myCell.swift */,
 				DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */,
 				DDF10C5E23080FCC00E8C67A /* ViewController.swift */,
 				DDF10C95231876B300E8C67A /* ImageEditorView.swift */,
+				DDF10CA92339477200E8C67A /* Playfield+Delegates.swift */,
 				DDF10C97231876F100E8C67A /* GameOverView.swift */,
+				DDF10CA72339476100E8C67A /* Playfield+DragDrop.swift */,
 				DDF10C9B2330CCF200E8C67A /* GameOverShare.swift */,
 				DDF10C992318771F00E8C67A /* PlayfieldView.swift */,
 				DDF10C9D2330CD8900E8C67A /* PlayfieldScoring.swift */,
-				DDF10C922318730100E8C67A /* Main.storyboard */,
+				DDF10CA52339471F00E8C67A /* Main.storyboard */,
 				DDF10C6323080FCD00E8C67A /* Assets.xcassets */,
 				DDF10C6523080FCD00E8C67A /* LaunchScreen.storyboard */,
 				DDF10C6823080FCD00E8C67A /* Info.plist */,
+				DDF10CAF23394A3500E8C67A /* cells */,
 				DDF10C9F2330CE8300E8C67A /* Models */,
 			);
 			path = Gridy;
@@ -149,6 +159,13 @@
 				DDF10CA02330CEAD00E8C67A /* Creations.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DDF10CAF23394A3500E8C67A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDF10C942318730100E8C67A /* Main.storyboard in Resources */,
+				DDF10CA62339471F00E8C67A /* Main.storyboard in Resources */,
 				DDF10C6723080FCD00E8C67A /* LaunchScreen.storyboard in Resources */,
 				DDF10C6423080FCD00E8C67A /* Assets.xcassets in Resources */,
 			);
@@ -286,10 +303,13 @@
 				DDF10C98231876F100E8C67A /* GameOverView.swift in Sources */,
 				DDF10CA12330CEAD00E8C67A /* Creations.swift in Sources */,
 				DDF10C9C2330CCF200E8C67A /* GameOverShare.swift in Sources */,
+				DDF10CAC233949E600E8C67A /* myCell.swift in Sources */,
 				DDF10C9A2318771F00E8C67A /* PlayfieldView.swift in Sources */,
 				DDF10C5F23080FCC00E8C67A /* ViewController.swift in Sources */,
 				DDF10C96231876B300E8C67A /* ImageEditorView.swift in Sources */,
+				DDF10CAA2339477200E8C67A /* Playfield+Delegates.swift in Sources */,
 				DDF10C5D23080FCC00E8C67A /* AppDelegate.swift in Sources */,
+				DDF10CA82339476100E8C67A /* Playfield+DragDrop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,14 +351,6 @@
 				DDF10C6623080FCD00E8C67A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DDF10C922318730100E8C67A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDF10C932318730100E8C67A /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
