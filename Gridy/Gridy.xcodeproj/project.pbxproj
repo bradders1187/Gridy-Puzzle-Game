@@ -13,7 +13,7 @@
 		DD255F6523413D8F00243199 /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F6423413D8F00243199 /* Tiles.swift */; };
 		DD255F692341440600243199 /* PuzzleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F682341440600243199 /* PuzzleController.swift */; };
 		DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */; };
-		DD255F75234A836900243199 /* Main .storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F74234A836900243199 /* Main .storyboard */; };
+		DD255F75234A836900243199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F74234A836900243199 /* Main.storyboard */; };
 		DDF10C5D23080FCC00E8C67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */; };
 		DDF10C5F23080FCC00E8C67A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C5E23080FCC00E8C67A /* ViewController.swift */; };
 		DDF10C6423080FCD00E8C67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF10C6323080FCD00E8C67A /* Assets.xcassets */; };
@@ -47,7 +47,7 @@
 		DD255F6423413D8F00243199 /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		DD255F682341440600243199 /* PuzzleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleController.swift; sourceTree = "<group>"; };
 		DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DD255F74234A836900243199 /* Main .storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main .storyboard"; sourceTree = "<group>"; };
+		DD255F74234A836900243199 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DDF10C5923080FCC00E8C67A /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF10C5E23080FCC00E8C67A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,25 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DD255F76234A85A300243199 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				DDF10C5E23080FCC00E8C67A /* ViewController.swift */,
-				DDF10C95231876B300E8C67A /* ImageEditorViewController.swift */,
-				DD255F682341440600243199 /* PuzzleController.swift */,
-				DDF10C992318771F00E8C67A /* GameOverController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DD255F78234A85C900243199 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				DD255F74234A836900243199 /* Main .storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		DDF10C5023080FCC00E8C67A = {
 			isa = PBXGroup;
 			children = (
@@ -131,9 +112,12 @@
 			isa = PBXGroup;
 			children = (
 				DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */,
+				DDF10C5E23080FCC00E8C67A /* ViewController.swift */,
+				DDF10C95231876B300E8C67A /* ImageEditorViewController.swift */,
+				DD255F682341440600243199 /* PuzzleController.swift */,
+				DDF10C992318771F00E8C67A /* GameOverController.swift */,
+				DD255F74234A836900243199 /* Main.storyboard */,
 				DDF10C9F2330CE8300E8C67A /* Models */,
-				DD255F76234A85A300243199 /* Controllers */,
-				DD255F78234A85C900243199 /* Storyboard */,
 				DDF10C6323080FCD00E8C67A /* Assets.xcassets */,
 				DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */,
 				DDF10C6823080FCD00E8C67A /* Info.plist */,
@@ -275,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */,
-				DD255F75234A836900243199 /* Main .storyboard in Resources */,
+				DD255F75234A836900243199 /* Main.storyboard in Resources */,
 				DDF10C6423080FCD00E8C67A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
