@@ -100,6 +100,9 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        print(gridLocations[0])
+        print(gridView.center.x-gridView.frame.width/2)
+        print(gridView.center.y-gridView.frame.height/2)
     }
     
     func configure() {
@@ -178,13 +181,14 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
         let postionInSuperView = sender.view?.convert(position, to: sender.view?.superview)
         sender.view?.transform = (sender.view?.transform.translatedBy(x: position.x, y: position.y))!
         if sender.state == .ended {
-
             let (nearTile, snapPosition) = isTileNearGrid(droppingPosition: postionInSuperView!)
             let tile = sender.view as! Tiles
             if nearTile {
                 sender.view?.frame.origin = gridLocations[snapPosition]
                 
-                //MARK: checs to see if tiles are in the right position
+                
+                
+                //MARK: checks to see if tiles are in the right position
                 if String(snapPosition) == tile.accessibilityLabel {
                     tile.isTileInCorrectLocation = true
                     updateMoveCounter(isItCorrect: true)
@@ -228,15 +232,21 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
     
     // MARK: check if the dropped location of the image slice is near any of the grid view locations
     func isTileNearGrid(droppingPosition: CGPoint) -> (Bool,Int) {
+        print(droppingPosition)
+        print("searching for the grid")
         for x in 0..<gridLocations.count {
             let gridlocation = gridLocations[x]
             let fromX = droppingPosition.x
             let toX = gridlocation.x
             let fromY = droppingPosition.y
             let toY = gridlocation.y
+//            if toX > fromX || toY > fromY {
+//                return (true, x-1)
+//            }
             let area = (fromX - toX) * (fromX - toX) + (fromY - toY) * (fromY - toY)
             let halfTileSideSize = (gridView.frame.height / 4) / 2
             if area < halfTileSideSize * halfTileSideSize {
+                print(gridlocation)
                 return(true, x)
             }
         }
@@ -249,11 +259,11 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
     func getGridLocations() {
         let width  = gridView.frame.width / 4
         let height = gridView.frame.height / 4
-        for y in 0..<3 {
-            for x in 0..<3 {
+        for y in 0..<4 {
+            for x in 0..<4 {
                 UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), false, 0)
                 let location = CGPoint.init(x: CGFloat(x) * width, y: CGFloat(y) * height)
-                locationInSuperview = gridView.convert(location, to: gridView.superview)
+                locationInSuperview = gridView.convert(location, to: view)
                 gridLocations.append(locationInSuperview)
             }
         }
