@@ -100,9 +100,14 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        print(gridLocations[0])
         print(gridView.center.x-gridView.frame.width/2)
         print(gridView.center.y-gridView.frame.height/2)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getGridLocations()
+        print(gridLocations[0])
     }
     
     func configure() {
@@ -110,9 +115,7 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
         draw.drawingOn(thisView: gridView)
         rounded(button: newGameButton)
         sliceImage(image: reSize(image: gameImage, newWidth: gridView.frame.width)!)
-        getGridLocations()
     }
-    
     
     //MARK: function to slice the game image into 16 slices
     func sliceImage(image: UIImage) {
@@ -186,8 +189,6 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
             if nearTile {
                 sender.view?.frame.origin = gridLocations[snapPosition]
                 
-                
-                
                 //MARK: checks to see if tiles are in the right position
                 if String(snapPosition) == tile.accessibilityLabel {
                     tile.isTileInCorrectLocation = true
@@ -220,7 +221,6 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
             destination.score = score
         }
     }
-    
     func allTilesInCorrectPosition() -> Bool {
         for tile in tileViews {
             if tile.isTileInCorrectLocation == false {
@@ -255,18 +255,16 @@ class PuzzleController: UIViewController, UIGestureRecognizerDelegate, UINavigat
     }
     
     //MARK: get grid view tiles locations and convert it to the containing view(superview)
-    private var locationInSuperview = CGPoint()
     func getGridLocations() {
+        gridLocations.removeAll()
+        let originalPoint = gridView.frame.origin
         let width  = gridView.frame.width / 4
         let height = gridView.frame.height / 4
         for y in 0..<4 {
             for x in 0..<4 {
-                UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), false, 0)
-                let location = CGPoint.init(x: CGFloat(x) * width, y: CGFloat(y) * height)
-                locationInSuperview = gridView.convert(location, to: view)
-                gridLocations.append(locationInSuperview)
+                let location = CGPoint.init(x:originalPoint.x + CGFloat(x) * width, y:originalPoint.y + CGFloat(y) * height)
+                gridLocations.append(location)
             }
         }
     }
-    
 }

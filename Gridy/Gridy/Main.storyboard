@@ -309,12 +309,17 @@
                                                     <action selector="peekButtonPressed:" destination="zvj-VA-oeY" eventType="touchUpInside" id="5DZ-yo-k0k"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8vE-8w-irz">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="297"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Mj1-mv-tZU" firstAttribute="bottom" secondItem="XcG-dZ-vfm" secondAttribute="bottomMargin" constant="8" id="0eK-dN-kSI"/>
                                             <constraint firstAttribute="bottom" secondItem="Mj1-mv-tZU" secondAttribute="bottom" constant="8" id="8Zn-QI-kyY"/>
                                             <constraint firstItem="Mj1-mv-tZU" firstAttribute="top" secondItem="XcG-dZ-vfm" secondAttribute="topMargin" constant="261" id="8d1-Gl-kWs"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mj1-mv-tZU" secondAttribute="bottom" id="FJL-Hg-iOj"/>
                                             <constraint firstAttribute="height" constant="297" id="T5s-bG-dkn"/>
                                             <constraint firstItem="Mj1-mv-tZU" firstAttribute="leading" secondItem="XcG-dZ-vfm" secondAttribute="leadingMargin" constant="315" id="UrP-mI-qjL"/>
                                             <constraint firstAttribute="trailing" secondItem="Mj1-mv-tZU" secondAttribute="trailing" constant="4" id="dfd-0B-84b"/>
@@ -334,14 +339,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-4l-dhS">
-                                        <rect key="frame" x="42" y="343" width="270" height="270"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="270" id="Elx-KL-SWe"/>
-                                            <constraint firstAttribute="width" constant="270" id="v9b-AB-0kB"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-Ty-2be">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-Ty-2be">
                                         <rect key="frame" x="67.5" y="300" width="220" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="7GL-MW-rWA"/>
@@ -353,19 +351,27 @@ swipe out of the grid to undo</string>
                                         <color key="textColor" red="0.58835500480000003" green="0.59591513870000001" blue="0.60392326119999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzR-4v-elE">
+                                        <rect key="frame" x="0.0" y="348" width="270" height="270"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-4l-dhS">
+                                                <rect key="frame" x="0.0" y="0.0" width="270" height="270"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hbs-4l-dhS" secondAttribute="height" multiplier="1:1" id="6uP-s2-SYx"/>
+                                                    <constraint firstAttribute="height" constant="270" id="Elx-KL-SWe"/>
+                                                    <constraint firstAttribute="width" constant="270" id="v9b-AB-0kB"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="E3k-Ty-2be" firstAttribute="centerX" secondItem="ep8-p4-95x" secondAttribute="centerX" id="Chf-ft-qdy">
                                         <variation key="heightClass=compact" constant="180"/>
                                     </constraint>
-                                    <constraint firstItem="hbs-4l-dhS" firstAttribute="top" secondItem="E3k-Ty-2be" secondAttribute="bottom" constant="3" id="ECG-VW-pZT"/>
-                                    <constraint firstAttribute="trailing" secondItem="hbs-4l-dhS" secondAttribute="trailing" constant="43" id="IJn-FE-Kxh">
-                                        <variation key="heightClass=compact" constant="5"/>
-                                    </constraint>
                                     <constraint firstItem="XcG-dZ-vfm" firstAttribute="top" secondItem="ep8-p4-95x" secondAttribute="top" id="axJ-Hc-dqh"/>
                                     <constraint firstItem="XcG-dZ-vfm" firstAttribute="leading" secondItem="ep8-p4-95x" secondAttribute="leading" id="bor-QM-ByF"/>
-                                    <constraint firstAttribute="bottom" secondItem="hbs-4l-dhS" secondAttribute="bottom" constant="8" id="jnQ-56-0Pe"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SO7-VL-xWc" userLabel="topContainingView">
