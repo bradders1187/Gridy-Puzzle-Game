@@ -1,56 +1,69 @@
 //
-//  PlayfieldView.swift
+//  GameOverController.swift
 //  Gridy
 //
-//  Created by Peter Bradtke on 29/08/2019.
+//  Created by Peter Bradtke on 30/10/2019.
 //  Copyright © 2019 Peter Bradtke. All rights reserved.
 //
+
 import UIKit
 
 class GameOverController: UIViewController {
     
-    var gameImage = UIImage()
+    //MARK: Outlets
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var optionsButton: UIButton!
+    @IBOutlet weak var scoreListView: UIView!
+    @IBOutlet weak var yourScore: UILabel!
+    @IBOutlet weak var totalMoves: UILabel!
+    @IBOutlet weak var wrongMoves: UILabel!
+    @IBOutlet weak var correctMoves: UILabel!
+    
+    //MARK: Variables
+    var popUpImage = UIImage()
+    var rightMoves = Int()
     var moves = Int()
     var score = Int()
     
-    //MARK: variables
-    @IBOutlet weak var completeImageHolder: UIImageView!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var newGameButton: UIButton!
-    @IBOutlet weak var shareButton: UIButton!
-    
-    //MARK: IBACTIONS/FUNCTIONS
-    //Function to let user create new game
-    @IBAction func newGameButton(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    //MARK: Function to let user share game results
-    @IBAction func shareButton(_ sender: Any) {
-        let note = "Congratulations!"
-        let image = gameImage
-        let items = [note as Any, image as Any]
-        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = view
-        present(activityController, animated: true)
-    }
-    //MARK: Function to turn buttons rounded
-    func rounded(button: UIButton) {
-        var roundedButton = RoundedButton()
-        roundedButton.setButton(button)
-        roundedButton.rounded()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        rounded(button: newGameButton)
-        rounded(button: shareButton)
-        
-        //MARK: set finished game label using score and moves
-        scoreLabel.text = "The puzzle was solved in \(moves) moves and you scored \(score) points"
-        completeImageHolder.image = gameImage
+        backgroundImageView.image = popUpImage
+        correctMoves.text = "Correct Moves: \(rightMoves)"
+        totalMoves.text = "Total Moves: \(moves)"
+        wrongMoves.text = "Wrong Moves: \(moves - rightMoves)"
+        yourScore.text = "Your Score: \(score)"
+        self.visualEffectView.effect = nil
     }
     
+    @IBAction func optionsButtonPressed(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.7) {
+            self.visualEffectView.effect = UIBlurEffect(style: .regular)
+            self.scoreListView.alpha = 0
+            self.optionsButton.alpha = 0
+            self.showAlert()
+        }
+    }
     
-   
+    func showAlert() {
+        let alert = UIAlertController(title: "Well done!", message: "Your Score: \(score) \nTotal Moves: \(moves) \nCorrect Moves: \(rightMoves) \nWrong Moves: \(moves - rightMoves)", preferredStyle: .alert)
+      
+        alert.addAction(UIAlertAction(title: "New Game!", style: UIAlertAction.Style.default) {(action) in
+            self.performSegue(withIdentifier: "newGameSegue", sender: self)
+            })
+      
+        alert.addAction(UIAlertAction(title: "Share", style: .default) {(action) in
+            self.displaySharingOptions()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive) {(action) in
+            UIView.animate(withDuration: 0.2) {
+                self.visualEffectView.effect = nil
+                self.scoreListView.alpha = 1
+                self.optionsButton.alpha = 1
+            }
+        })
+        self.present(alert, animated: true, completion: nil)
+    }
 }
+

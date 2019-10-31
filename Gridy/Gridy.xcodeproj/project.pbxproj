@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD255F5F23413B4E00243199 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F5E23413B4E00243199 /* RoundedButton.swift */; };
-		DD255F6123413BE300243199 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F6023413BE300243199 /* Grid.swift */; };
-		DD255F6323413C5600243199 /* ViewGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F6223413C5600243199 /* ViewGrid.swift */; };
-		DD255F6523413D8F00243199 /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F6423413D8F00243199 /* Tiles.swift */; };
 		DD255F692341440600243199 /* PuzzleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F682341440600243199 /* PuzzleController.swift */; };
 		DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */; };
-		DD255F75234A836900243199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F74234A836900243199 /* Main.storyboard */; };
+		DD35DC82236A510400C1187A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC81236A510300C1187A /* Assets.xcassets */; };
+		DD35DC8B236B073900C1187A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC8A236B073900C1187A /* Main.storyboard */; };
+		DD52058A236A4983009775DE /* PuzzleControllerDragandDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */; };
+		DD52058C236A49F7009775DE /* PuzzleControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */; };
+		DD520592236A4ABA009775DE /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520591236A4ABA009775DE /* myCell.swift */; };
+		DD520594236A4B24009775DE /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520593236A4B24009775DE /* GameOverController.swift */; };
+		DD520596236A4B82009775DE /* GameOverControllerShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520595236A4B82009775DE /* GameOverControllerShare.swift */; };
+		DD520598236A4C1D009775DE /* Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520597236A4C1D009775DE /* Creation.swift */; };
 		DDF10C5D23080FCC00E8C67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */; };
 		DDF10C5F23080FCC00E8C67A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C5E23080FCC00E8C67A /* ViewController.swift */; };
-		DDF10C6423080FCD00E8C67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF10C6323080FCD00E8C67A /* Assets.xcassets */; };
 		DDF10C7223080FCD00E8C67A /* GridyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C7123080FCD00E8C67A /* GridyTests.swift */; };
 		DDF10C7D23080FCD00E8C67A /* GridyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C7C23080FCD00E8C67A /* GridyUITests.swift */; };
-		DDF10C96231876B300E8C67A /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C95231876B300E8C67A /* ImageEditorViewController.swift */; };
-		DDF10C9A2318771F00E8C67A /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C992318771F00E8C67A /* GameOverController.swift */; };
+		DDF10C96231876B300E8C67A /* ImageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C95231876B300E8C67A /* ImageEditorView.swift */; };
+		DDF10C9A2318771F00E8C67A /* PuzzleControllerScoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF10C992318771F00E8C67A /* PuzzleControllerScoring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,17 +43,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DD255F5E23413B4E00243199 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		DD255F6023413BE300243199 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		DD255F6223413C5600243199 /* ViewGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewGrid.swift; sourceTree = "<group>"; };
-		DD255F6423413D8F00243199 /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		DD255F682341440600243199 /* PuzzleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleController.swift; sourceTree = "<group>"; };
 		DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DD255F74234A836900243199 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DD35DC81236A510300C1187A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Gridy-master 2/Gridy/Gridy/Assets.xcassets"; sourceTree = "<group>"; };
+		DD35DC8A236B073900C1187A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerDragandDrop.swift; sourceTree = "<group>"; };
+		DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerDelegates.swift; sourceTree = "<group>"; };
+		DD520591236A4ABA009775DE /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		DD520593236A4B24009775DE /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
+		DD520595236A4B82009775DE /* GameOverControllerShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverControllerShare.swift; sourceTree = "<group>"; };
+		DD520597236A4C1D009775DE /* Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creation.swift; sourceTree = "<group>"; };
 		DDF10C5923080FCC00E8C67A /* Gridy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF10C5E23080FCC00E8C67A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DDF10C6323080FCD00E8C67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDF10C6823080FCD00E8C67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDF10C6D23080FCD00E8C67A /* GridyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF10C7123080FCD00E8C67A /* GridyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridyTests.swift; sourceTree = "<group>"; };
@@ -59,8 +63,8 @@
 		DDF10C7823080FCD00E8C67A /* GridyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF10C7C23080FCD00E8C67A /* GridyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridyUITests.swift; sourceTree = "<group>"; };
 		DDF10C7E23080FCD00E8C67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDF10C95231876B300E8C67A /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
-		DDF10C992318771F00E8C67A /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
+		DDF10C95231876B300E8C67A /* ImageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorView.swift; sourceTree = "<group>"; };
+		DDF10C992318771F00E8C67A /* PuzzleControllerScoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerScoring.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD520588236A4946009775DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DDF10C992318771F00E8C67A /* PuzzleControllerScoring.swift */,
+				DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */,
+				DD520595236A4B82009775DE /* GameOverControllerShare.swift */,
+				DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD52058D236A4A58009775DE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DD520591236A4ABA009775DE /* myCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DDF10C5023080FCC00E8C67A = {
 			isa = PBXGroup;
 			children = (
@@ -113,12 +136,14 @@
 			children = (
 				DDF10C5C23080FCC00E8C67A /* AppDelegate.swift */,
 				DDF10C5E23080FCC00E8C67A /* ViewController.swift */,
-				DDF10C95231876B300E8C67A /* ImageEditorViewController.swift */,
+				DDF10C95231876B300E8C67A /* ImageEditorView.swift */,
 				DD255F682341440600243199 /* PuzzleController.swift */,
-				DDF10C992318771F00E8C67A /* GameOverController.swift */,
-				DD255F74234A836900243199 /* Main.storyboard */,
+				DD35DC8A236B073900C1187A /* Main.storyboard */,
+				DD520593236A4B24009775DE /* GameOverController.swift */,
+				DD52058D236A4A58009775DE /* Cells */,
+				DD520588236A4946009775DE /* Extensions */,
 				DDF10C9F2330CE8300E8C67A /* Models */,
-				DDF10C6323080FCD00E8C67A /* Assets.xcassets */,
+				DD35DC81236A510300C1187A /* Assets.xcassets */,
 				DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */,
 				DDF10C6823080FCD00E8C67A /* Info.plist */,
 			);
@@ -146,10 +171,7 @@
 		DDF10C9F2330CE8300E8C67A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DD255F6023413BE300243199 /* Grid.swift */,
-				DD255F5E23413B4E00243199 /* RoundedButton.swift */,
-				DD255F6223413C5600243199 /* ViewGrid.swift */,
-				DD255F6423413D8F00243199 /* Tiles.swift */,
+				DD520597236A4C1D009775DE /* Creation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,9 +280,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD35DC8B236B073900C1187A /* Main.storyboard in Resources */,
 				DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */,
-				DD255F75234A836900243199 /* Main.storyboard in Resources */,
-				DDF10C6423080FCD00E8C67A /* Assets.xcassets in Resources */,
+				DD35DC82236A510400C1187A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,15 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDF10C9A2318771F00E8C67A /* GameOverController.swift in Sources */,
+				DD520598236A4C1D009775DE /* Creation.swift in Sources */,
+				DDF10C9A2318771F00E8C67A /* PuzzleControllerScoring.swift in Sources */,
+				DD520592236A4ABA009775DE /* myCell.swift in Sources */,
 				DDF10C5F23080FCC00E8C67A /* ViewController.swift in Sources */,
-				DD255F6123413BE300243199 /* Grid.swift in Sources */,
-				DD255F5F23413B4E00243199 /* RoundedButton.swift in Sources */,
-				DDF10C96231876B300E8C67A /* ImageEditorViewController.swift in Sources */,
-				DD255F6523413D8F00243199 /* Tiles.swift in Sources */,
+				DD52058C236A49F7009775DE /* PuzzleControllerDelegates.swift in Sources */,
+				DDF10C96231876B300E8C67A /* ImageEditorView.swift in Sources */,
 				DDF10C5D23080FCC00E8C67A /* AppDelegate.swift in Sources */,
 				DD255F692341440600243199 /* PuzzleController.swift in Sources */,
-				DD255F6323413C5600243199 /* ViewGrid.swift in Sources */,
+				DD520594236A4B24009775DE /* GameOverController.swift in Sources */,
+				DD52058A236A4983009775DE /* PuzzleControllerDragandDrop.swift in Sources */,
+				DD520596236A4B82009775DE /* GameOverControllerShare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
