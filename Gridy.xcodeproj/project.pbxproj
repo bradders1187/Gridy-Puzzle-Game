@@ -10,7 +10,7 @@
 		DD255F692341440600243199 /* PuzzleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255F682341440600243199 /* PuzzleController.swift */; };
 		DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */; };
 		DD35DC8B236B073900C1187A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC8A236B073900C1187A /* Main.storyboard */; };
-		DD35DC8D236F679800C1187A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC8C236F679800C1187A /* Assets.xcassets */; };
+		DD35DC8F236F697200C1187A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC8E236F697200C1187A /* Assets.xcassets */; };
 		DD52058A236A4983009775DE /* PuzzleControllerDragandDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */; };
 		DD52058C236A49F7009775DE /* PuzzleControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */; };
 		DD520592236A4ABA009775DE /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520591236A4ABA009775DE /* myCell.swift */; };
@@ -46,7 +46,7 @@
 		DD255F682341440600243199 /* PuzzleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleController.swift; sourceTree = "<group>"; };
 		DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD35DC8A236B073900C1187A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DD35DC8C236F679800C1187A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Gridy-master 2/Gridy/Gridy/Assets.xcassets"; sourceTree = "<group>"; };
+		DD35DC8E236F697200C1187A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Gridy-master 2/Gridy/Gridy/Assets.xcassets"; sourceTree = "<group>"; };
 		DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerDragandDrop.swift; sourceTree = "<group>"; };
 		DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerDelegates.swift; sourceTree = "<group>"; };
 		DD520591236A4ABA009775DE /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				DDF10C9F2330CE8300E8C67A /* Models */,
 				DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */,
 				DDF10C6823080FCD00E8C67A /* Info.plist */,
-				DD35DC8C236F679800C1187A /* Assets.xcassets */,
+				DD35DC8E236F697200C1187A /* Assets.xcassets */,
 			);
 			path = Gridy;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD35DC8B236B073900C1187A /* Main.storyboard in Resources */,
-				DD35DC8D236F679800C1187A /* Assets.xcassets in Resources */,
+				DD35DC8F236F697200C1187A /* Assets.xcassets in Resources */,
 				DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
