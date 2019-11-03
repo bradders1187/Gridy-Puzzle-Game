@@ -6,25 +6,24 @@
 //  Copyright © 2019 Peter Bradtke. All rights reserved.
 //
 
+
 import UIKit
 import Photos
 import AVFoundation
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate {
-    
-    //Outlets
+    //MARK: Outlets
     @IBOutlet weak var gridyLogo: UIImageView!
     @IBOutlet weak var orLoadYourOwnLabel: UILabel!
     @IBOutlet weak var challengeYourselfLabel: UILabel!
     
-    // Variables and Constants
+    //MARK: variables and constants
     var creation = Creation.init()
     var localImages = [UIImage].init()
     let imagePickerController = UIImagePickerController()
     var newImage = UIImage.init()
     
-    
-    //Functions
+    //MARK: IBActions
     @IBAction func cameraButton(_ sender: UIButton) {
         displayCamera()
     }
@@ -33,27 +32,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     @IBAction func pickButton(_ sender: UIButton) {
         pickRandom()
-    
     }
-    
-    //Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mySegue" {
-            _ = segue.destination as! ImageEditorView
+            let vc = segue.destination as! ImageEditorView
+            vc.incomingImage = creation.image
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectLocalImageSet()
     }
-    
-    //Access to camera and libary
+    //MARK: Access to camera and library
     func displayCamera() {
         let sourceType = UIImagePickerController.SourceType.camera
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-            let noPermissionMessage = "Looks like Gridy doesn't have access to your camera 😔 Please use Settings app on your device to permit Gridy accessing your camera"
+            let noPermissionMessage = "Looks like Gridy doesn't have access to your camera :( Please use Settings app on your device to permit Gridy accessing your camera"
             switch status {
             case .notDetermined:
                 AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: {(granted) in
@@ -72,16 +67,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             }
         }
         else {
-            troubleAlert(message: "Oh no! We can't access your camera right now!📷")
+            troubleAlert(message: "Oh No 😔, it looks like we can't access your camera at this time")
         }
     }
-    
     func displayLibrary() {
         let sourceType = UIImagePickerController.SourceType.photoLibrary
         
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             let status = PHPhotoLibrary.authorizationStatus()
-            let noPermissionStatusMessage = "Oh no it looks like we can't gain access to your photo libary right now! 😔 Please go to your iPhone settings to change Gridy's permissions"
+            let noPermissionStatusMessage = "Looks like Gridy haven't access to your photos :( Please use Setting app on your device to permit Gridy accessing your library"
             switch status {
             case .notDetermined:
                 PHPhotoLibrary.requestAuthorization({ (newStatus) in
@@ -97,14 +91,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 self.troubleAlert(message: noPermissionStatusMessage)
             @unknown default:
                 self.presentImagePicker(sourceType: sourceType)
-                
+           
             }
         }
         else {
-            troubleAlert(message: "Oh no it looks like we can't gain access to your photo libary right now! 😔 Please go to your iPhone settings to change Gridy's permissions")
+            troubleAlert(message: "Oh No 😔, it looks like we can't access your photo library at this time")
         }
     }
-    //Image picker
+    //MARK: image picking
     func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -113,6 +107,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         present(imagePicker, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // got an image
         let newImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         processPicked(image: newImage)
         dismiss(animated: true, completion: { () -> Void in
@@ -124,7 +119,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     func troubleAlert(message: String?) {
         let alertController = UIAlertController(title: "Oops...😔", message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "Got it.😁", style: .cancel)
+        let OKAction = UIAlertAction(title: "Got it.👌🏻", style: .cancel)
         alertController.addAction(OKAction)
         present(alertController, animated: true)
     }
@@ -152,12 +147,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     func collectLocalImageSet() {
         localImages.removeAll()
-        let imageNames = ["Fawn", "Island", "Lake", "Mountain", "Rabbit", "Wood"]
+        let imageNames = ["Fawn", "Island", "Lake", "Mountain", "Rabbit", "Halloween"]
         for name in imageNames {
             if let image = UIImage.init(named: name) {
                 localImages.append(image)
             }
         }
     }
-    
 }

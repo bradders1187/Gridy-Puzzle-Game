@@ -11,13 +11,12 @@ import CoreImage
 
 class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate {
     
-    //Outlets
     @IBOutlet weak var adjustThePuzzleImageLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var creationFrame: UIView!
     @IBOutlet weak var creationImageView: UIImageView!
+    @IBOutlet weak var gridView: UICollectionView!
     
-    //Functions
     @IBAction func StartButton(_ sender: UIButton) {
         setImageToSend()
     }
@@ -25,7 +24,6 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         dismiss(animated: true, completion: nil)
     }
     
-    //Variables
     var incomingImage: UIImage?
     var initialImageViewOffset = CGPoint()
     var defaults = UserDefaults.standard
@@ -40,6 +38,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         super.viewDidLoad()
         setImage()
         
+        // Create gesture with target self(viewcontroller) and handler function.
         self.panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:)))
         self.pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(recognizer:)))
         self.rotateRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(recognizer:)))
@@ -49,7 +48,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         rotateRecognizer?.delegate = self
         panRecognizer?.delegate = self
         
-        // For creation image view
+        // add gesture to creation.imageView
         self.creationImageView.addGestureRecognizer(panRecognizer!)
         self.creationImageView.addGestureRecognizer(pinchRecognizer!)
         self.creationImageView.addGestureRecognizer(rotateRecognizer!)
@@ -62,7 +61,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         }
     }
     
-    // handles UIPanGestureRecognizer for panning image
+    // handle UIPanGestureRecognizer
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
         let gview = recognizer.view
         if recognizer.state == .began || recognizer.state == .changed {
@@ -72,7 +71,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         }
     }
     
-    // handles UIPinchGestureRecognizer for zoom in and out
+    // handle UIPinchGestureRecognizer
     @objc func handlePinch(recognizer: UIPinchGestureRecognizer) {
         if recognizer.state == .began || recognizer.state == .changed {
             recognizer.view?.transform = (recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale))!
@@ -80,7 +79,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         }
     }
     
-   // Handles image rotation for devices
+    // handle UIRotationGestureRecognizer
     @objc func handleRotate(recognizer: UIRotationGestureRecognizer) {
         if recognizer.state == .began || recognizer.state == .changed {
             recognizer.view?.transform = (recognizer.view?.transform.rotated(by: recognizer.rotation))!
@@ -88,11 +87,13 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
         }
     }
     
-    // Handles a sequence of touches
+    // mark sure you override this function to make gestures work together
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        // simultaneous gesture recognition will only be supported for creationImageView
         if gestureRecognizer.view != creationImageView {
             return false
         }
+        // neither of the recognized gestures should not be tap gesture
         if gestureRecognizer is UITapGestureRecognizer
             || otherGestureRecognizer is UITapGestureRecognizer
             || gestureRecognizer is UIPanGestureRecognizer
@@ -116,7 +117,7 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     func slice(screenshot: UIImage, into howMany: Int) -> [UIImage] {
         let width: CGFloat
         let height: CGFloat
-        
+
         switch screenshot.imageOrientation {
         case .left, .leftMirrored, .right, .rightMirrored:
             width = screenshot.size.height
@@ -125,16 +126,16 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
             width = screenshot.size.width
             height = screenshot.size.height
         }
-        
+
         let tileWidth = Int(width / CGFloat(howMany))
         let tileHeight = Int(height / CGFloat(howMany))
-        
+
         let scale = Int(screenshot.scale)
         var images = [UIImage]()
         let cgImage = screenshot.cgImage!
-        
+
         var adjustedHeight = tileHeight
-        
+
         var y = 0
         for row in 0 ..< howMany {
             if row == (howMany - 1) {
@@ -170,9 +171,16 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "my2ndSegue" {
-            let vc2 = segue.destination as! PlayfieldView
+            let vc2 = segue.destination as! PuzzleController
             vc2.toReceive = toSend
             vc2.popUpImage = self.screenshot
         }
     }
 }
+
+
+    
+    
+    
+    
+

@@ -29,10 +29,10 @@
 		<string>armv7</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>We need access to your camera for picture you want to take now</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
-	<key>NSAppleMusicUsageDescription</key>
+	<string>We need access to your Libary so you can use custom photos</string>
+	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
