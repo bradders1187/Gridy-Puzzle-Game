@@ -50,6 +50,9 @@ extension PuzzleController: UICollectionViewDelegate, UICollectionViewDataSource
     
     @objc func hidePopUpImage() {
         popUpView.isHidden = true
+        if helpButton.isSelected == false {
+            
+        }
     }
     
     //MARK: Orientation Transition

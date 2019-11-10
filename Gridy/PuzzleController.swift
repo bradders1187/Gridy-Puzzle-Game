@@ -12,6 +12,7 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var puzzleBoard: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var popUpView: UIImageView!
+    @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
     @IBAction func switchButtonOn(_ sender: UISwitch) {
         if sender .isOn {
@@ -68,7 +69,8 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
     
     
     //MARK: - IBActions
-    @IBAction func newGameAction(_ sender: Any) { }
+    @IBAction func newGameAction(_ sender: UIButton!) { }
+    @IBAction func helpButton (_ sender: UIButton!) { }
     
     func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
