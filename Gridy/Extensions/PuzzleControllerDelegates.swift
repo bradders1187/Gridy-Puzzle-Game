@@ -21,13 +21,13 @@ extension PuzzleController: UICollectionViewDelegate, UICollectionViewDataSource
         cell.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
         cell.layer.borderWidth = 1
         cell.backgroundColor = .white
-        // COLLECTION VIEW 1
+        // tileViewCollectionView
         if collectionView == tileView {
             let width = (tileView.frame.size.width - 30) / 6
             let layout = tileView.collectionViewLayout as! UICollectionViewFlowLayout
             layout.itemSize = CGSize(width: width, height: width)
             cell.imageView.image = tileViewImages[indexPath.item]
-        // COLLECTION VIEW 2
+        // puzzleBoardCollectionView
         } else {
             let width = puzzleBoard.frame.size.width / 4
             let layout = puzzleBoard.collectionViewLayout as! UICollectionViewFlowLayout
@@ -36,22 +36,8 @@ extension PuzzleController: UICollectionViewDelegate, UICollectionViewDataSource
         }
         return cell
     }
-    
-    //MARK: - Did Select Item At - help button
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == (tileViewImages.count - 1) {
-            popUpView.isHidden = false
-            popUpView.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
-            popUpView.layer.borderWidth = 5
-            popUpView.layer.cornerRadius = 15
-            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.hidePopUpImage), userInfo: nil, repeats: false)
-        }
-    }
-    
-    @objc func hidePopUpImage() {
-        popUpView.isHidden = true
-        if helpButton.isSelected == false {
-            
         }
     }
     

@@ -12,7 +12,6 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var puzzleBoard: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var popUpView: UIImageView!
-    @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
     @IBAction func switchButtonOn(_ sender: UISwitch) {
         if sender .isOn {
@@ -70,7 +69,22 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
     
     //MARK: - IBActions
     @IBAction func newGameAction(_ sender: UIButton!) { }
-    @IBAction func helpButton (_ sender: UIButton!) { }
+    @IBAction func helpButton (_ sender: UIButton!) {
+        showHelp()
+    }
+    
+    func showHelp() {
+        popUpView.isHidden = false
+        popUpView.layer.borderColor = UIColor(red: 243/255, green: 233/255, blue: 210/255, alpha: 1).cgColor
+        popUpView.layer.borderWidth = 5
+        popUpView.layer.cornerRadius = 15
+        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.hidePopUpImage), userInfo: nil, repeats: false)
+    }
+    
+    @objc func hidePopUpImage () {
+        popUpView.isHidden = true
+    }
+
     
     func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
