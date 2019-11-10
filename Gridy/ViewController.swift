@@ -104,6 +104,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker.delegate = self
         imagePicker.sourceType = sourceType
         imagePicker.allowsEditing = false
+        imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -125,6 +126,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     func pickRandom() {
         processPicked(image: randomImage())
+        
         performSegue(withIdentifier: "mySegue", sender: self)
     }
     func processPicked(image: UIImage?) {

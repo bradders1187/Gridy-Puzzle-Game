@@ -15,8 +15,6 @@ class ImageEditorView: UIViewController, UINavigationControllerDelegate, UIImage
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var creationFrame: UIView!
     @IBOutlet weak var creationImageView: UIImageView!
-    @IBOutlet weak var gridView: UICollectionView!
-    
     @IBAction func StartButton(_ sender: UIButton) {
         setImageToSend()
     }

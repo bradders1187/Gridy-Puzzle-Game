@@ -72,6 +72,7 @@ extension PuzzleController: UICollectionViewDragDelegate, UICollectionViewDropDe
             let dragItem = items.first!.dragItem.localObject as! UIImage
             if dragItem === toReceive[destinationIndexPath.item] {
                 rightMoves += 1
+                playSound()
                 self.puzzleBoardImages.insert(items.first!.dragItem.localObject as! UIImage, at: destinationIndexPath.row)
                 puzzleBoard.insertItems(at: [destinationIndexPath])
                 if let selected = isSelected {

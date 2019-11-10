@@ -1,10 +1,3 @@
-//
-//  PuzzleController.swift
-//  Gridy
-//
-//  Created by Peter Bradtke on 29/09/2019.
-//  Copyright © 2019 Peter Bradtke. All rights reserved.
-//
 
 import UIKit
 import Photos
@@ -21,6 +14,11 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var popUpView: UIImageView!
     @IBOutlet weak var newGameButton: UIButton!
     @IBAction func switchButtonOn(_ sender: UISwitch) {
+        if sender .isOn {
+            soundIsOn = true
+        } else {
+            soundIsOn = false
+        }
     }
     
     //MARK: - Variables
@@ -32,6 +30,7 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
     var rightMoves: Int = 0
     var popUpImage = UIImage()
     var isSelected: IndexPath?
+    var soundIsOn: Bool = true
     var audioPlayer: AVAudioPlayer?
     
     //MARK: - View Functions
@@ -67,11 +66,27 @@ class PuzzleController: UIViewController, AVAudioPlayerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    
     //MARK: - IBActions
     @IBAction func newGameAction(_ sender: Any) { }
     
     func vibrate() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
+    
+    func playSound() {
+        if soundIsOn == true {
+            audioPlayer = AVAudioPlayer()
+            let Sounds = Bundle.main.path(forResource: "Correct", ofType: "mp3")
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Sounds!))
+                print("sound is playing!!")
+            }
+            catch {
+                print (error.localizedDescription)
+            }
+            audioPlayer!.play()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

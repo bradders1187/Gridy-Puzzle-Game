@@ -11,6 +11,10 @@
 		DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */; };
 		DD35DC8B236B073900C1187A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC8A236B073900C1187A /* Main.storyboard */; };
 		DD35DC91236F6B6F00C1187A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD35DC90236F6B6F00C1187A /* Assets.xcassets */; };
+		DD35DCA22378626200C1187A /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD35DCA12378626200C1187A /* Correct.mp3 */; };
+		DD35DCA42378627900C1187A /* Puzzle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD35DCA32378627900C1187A /* Puzzle.mp3 */; };
+		DD35DCA7237863B900C1187A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD35DCA6237863B900C1187A /* AVFoundation.framework */; };
+		DD35DCA923786B4000C1187A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD35DCA823786B4000C1187A /* AudioToolbox.framework */; };
 		DD52058A236A4983009775DE /* PuzzleControllerDragandDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */; };
 		DD52058C236A49F7009775DE /* PuzzleControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */; };
 		DD520592236A4ABA009775DE /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD520591236A4ABA009775DE /* myCell.swift */; };
@@ -47,6 +51,10 @@
 		DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD35DC8A236B073900C1187A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DD35DC90236F6B6F00C1187A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD35DCA12378626200C1187A /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Correct.mp3; sourceTree = "<group>"; };
+		DD35DCA32378627900C1187A /* Puzzle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Puzzle.mp3; sourceTree = "<group>"; };
+		DD35DCA6237863B900C1187A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DD35DCA823786B4000C1187A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DD520589236A4983009775DE /* PuzzleControllerDragandDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerDragandDrop.swift; sourceTree = "<group>"; };
 		DD52058B236A49F7009775DE /* PuzzleControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleControllerDelegates.swift; sourceTree = "<group>"; };
 		DD520591236A4ABA009775DE /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
@@ -72,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD35DCA923786B4000C1187A /* AudioToolbox.framework in Frameworks */,
+				DD35DCA7237863B900C1187A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD35DCA5237863B900C1187A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD35DCA823786B4000C1187A /* AudioToolbox.framework */,
+				DD35DCA6237863B900C1187A /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD35DCAA23788C0D00C1187A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DD35DCA12378626200C1187A /* Correct.mp3 */,
+				DD35DCA32378627900C1187A /* Puzzle.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		DD520588236A4946009775DE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +146,7 @@
 				DDF10C7023080FCD00E8C67A /* GridyTests */,
 				DDF10C7B23080FCD00E8C67A /* GridyUITests */,
 				DDF10C5A23080FCC00E8C67A /* Products */,
+				DD35DCA5237863B900C1187A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +175,7 @@
 				DD255F6A23414C0D00243199 /* LaunchScreen.storyboard */,
 				DDF10C6823080FCD00E8C67A /* Info.plist */,
 				DD35DC90236F6B6F00C1187A /* Assets.xcassets */,
+				DD35DCAA23788C0D00C1187A /* Sounds */,
 			);
 			path = Gridy;
 			sourceTree = "<group>";
@@ -281,8 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD35DC8B236B073900C1187A /* Main.storyboard in Resources */,
+				DD35DCA42378627900C1187A /* Puzzle.mp3 in Resources */,
 				DD35DC91236F6B6F00C1187A /* Assets.xcassets in Resources */,
 				DD255F6B23414C0D00243199 /* LaunchScreen.storyboard in Resources */,
+				DD35DCA22378626200C1187A /* Correct.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

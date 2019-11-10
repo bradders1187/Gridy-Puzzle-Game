@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class GameOverController: UIViewController {
+class GameOverController: UIViewController, AVAudioPlayerDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -25,9 +26,11 @@ class GameOverController: UIViewController {
     var rightMoves = Int()
     var moves = Int()
     var score = Int()
+    var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playSound()
         backgroundImageView.image = popUpImage
         correctMoves.text = "Correct Moves: \(rightMoves)"
         totalMoves.text = "Total Moves: \(moves)"
@@ -44,10 +47,10 @@ class GameOverController: UIViewController {
             self.showAlert()
         }
     }
-    
+    // MARK: shows user details of game played.
     func showAlert() {
         let alert = UIAlertController(title: "Well done!", message: "Your Score: \(score) \nTotal Moves: \(moves) \nCorrect Moves: \(rightMoves) \nWrong Moves: \(moves - rightMoves)", preferredStyle: .alert)
-      
+      //user can choose from following actions
         alert.addAction(UIAlertAction(title: "New Game!", style: UIAlertAction.Style.default) {(action) in
             self.performSegue(withIdentifier: "newGameSegue", sender: self)
             })
@@ -65,5 +68,18 @@ class GameOverController: UIViewController {
         })
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func playSound() {
+               audioPlayer = AVAudioPlayer()
+               let Sounds = Bundle.main.path(forResource: "Puzzle", ofType: "mp3")
+               do {
+                   audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Sounds!))
+                   print("sound is playing!!")
+               }
+               catch {
+                   print (error.localizedDescription)
+               }
+               audioPlayer!.play()
+        }
 }
 

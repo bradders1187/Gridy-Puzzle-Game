@@ -17,7 +17,7 @@ extension GameOverController {
             self.optionsButton.alpha = 0
             self.scoreListView.alpha = 1
         }
-        let note = "I MADE IT!"
+        let note = "YOU DID IT!!"
         let image = composeCreationImage()
         let items = [image as Any, note as Any]
         //create activity view controller
